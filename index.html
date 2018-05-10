@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Twittler by Nicolas Peyrichou</title>
+    <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="script_twittler.js"></script>
+    <script src="moment.js"></script>
   </head>
-  <body>
-    <script>
+  <body>-
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+      <header>
+          <div class="container">
+              <img src="twittler_logo_by_nicolas_peyrichou.png">
+          </div>
+      </header>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+      <section id="user_section">
+          <div class="container">
+              <button id="btn">New Tweets</button>
+              <form>
+                  <input type="text" id="input_text" placeholder="Enter tweet here...">
+                  <input type="submit" id="submit_btn" value="tweet!">
+              </form>
+          </div>
+      </section>
 
-      });
+      <section id="twittler_content">
+          <div class="container">
+              <p id="user_tweets"></p>
+              <ul id="new_tweets"></ul>
+          </div>
+      </section>
 
-    </script>
+      <footer>
+          <p>Twittler by Nicolas Peyrichou, Copyright &copy; 2018</p>
+      </footer>
+
   </body>
 </html>
